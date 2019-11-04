@@ -30,6 +30,6 @@ ANNOVAR:
 gzip -d clean.sort.rmdup.vcf.gz
 perl /Guest/Tools/convert2annovar.pl -format vcf4 clean.sort.rmdup.vcf > clean.sort.rmdup.vcf4
 
-perl /root/Working_disk/harddisk_sdb1/bin/annovar/annotation.pl /Guest/User/Guest01/clean.sort.rmdup.vcf4 /Guest/User/Guest01/anno.sh (absolute directory)
+perl /root/Working_disk/harddisk_sdb1/bin/annovar/annotation.pl /Guest/User/Guest01/clean.sort.rmdup.vcf4 /Guest/User/Guest01/anno.sh
 
 sh anno.sh
