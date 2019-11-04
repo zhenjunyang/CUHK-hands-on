@@ -21,13 +21,15 @@ Samtools for indexing:
 
 Step 4: variants calling
 GATK:
+
 /usr/bin/java -Xmx8g -jar /Guest/Tools/GenomeAnalysisTK.jar -T HaplotypeCaller -R /Guest/Data/hg19.fa -I clean.sort.rmdup.bam -stand_call_conf 30 -stand_emit_conf 10 -baqGOP 30 -rf BadCigar -minPruning 10 -U ALLOW_SEQ_DICT_INCOMPATIBILITY -A QualByDepth -A HaplotypeScore -A BaseQualityRankSumTest -A MappingQualityRankSumTest -A ReadPosRankSumTest -A FisherStrand -A DepthPerAlleleBySample -A ClippingRankSumTest -L chr11 -o clean.sort.rmdup.vcf.gz
 
 Step 5: annotation
 ANNOVAR:
+
 gzip -d clean.sort.rmdup.vcf.gz
 perl /Guest/Tools/convert2annovar.pl -format vcf4 clean.sort.rmdup.vcf > clean.sort.rmdup.vcf4
 
-perl /root/Working_disk/harddisk_sdb1/bin/annovar/annotation.pl /Guest/User/Guest01/clean.sort.rmdup.vcf4  /Guest/User/Guest01/anno.sh (absolute directory)
+perl /root/Working_disk/harddisk_sdb1/bin/annovar/annotation.pl /Guest/User/Guest01/clean.sort.rmdup.vcf4 /Guest/User/Guest01/anno.sh (absolute directory)
 
 sh anno.sh
